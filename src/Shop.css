@@ -1,0 +1,135 @@
+.navbar {
+  background-color: #0a2a66;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .logo {
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.navbar .search-bar input {
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: none;
+  width: 250px;
+}
+.navbar .cart {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.products-container {
+  max-width: 1380px;
+  margin: 20px auto;
+  padding: 20px;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.product-card {
+  background: white;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding-bottom: 10px;
+}
+.product-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+.price {
+  font-weight: bold;
+  margin: 5px 0;
+}
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+  font-size: 14px;
+}
+.add-btn {
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cart-container {
+  max-width: 800px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.cart-container h1 {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.cart-item img {
+  width: 140px;
+  height: 120px;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+.item-details {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item-details h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.quantity button {
+  padding: 4px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.item-total {
+  font-weight: bold;
+}
+
+.cart-summary {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.checkout-btn {
+  background: green;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.checkout-btn:hover {
+  background: darkgreen;
+}
+
