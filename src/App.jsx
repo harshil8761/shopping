@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Shopping from './Shopping'
 import Cart from './Cart'
 import {Toaster} from 'react-hot-toast'
+import ErrorPage from './components/ErrorPage'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Shopping />} />
             <Route path='/cart' element={<Cart />} />
+            <Route path='*' element={<ErrorPage />} />
           </Routes>
       </BrowserRouter>
     </>
