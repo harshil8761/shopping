@@ -11,6 +11,8 @@ const ShopProvider = ({ children }) => {
     return JSON.parse(localStorage.getItem("products")) || [];
   });
 
+  let LocalStorage = JSON.parse(localStorage.getItem("products")) || [];
+
   const [searchPro,setSreachPro] = useState("");
 
   const addToCart = (id) => {
@@ -28,6 +30,8 @@ const ShopProvider = ({ children }) => {
     setCart(updateCart);
     toast.success(`Item added from cart! 🗑️ ${id}`);
   };
+
+
 
   useEffect(() => {
     localStorage.setItem("products", JSON.stringify(cart));
