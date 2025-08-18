@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useMemo, useState } from "react";
 import { all_product } from "../assets/product.js";
 import toast from 'react-hot-toast'
 
@@ -52,7 +52,7 @@ const ShopProvider = ({ children }) => {
     if (!searchPro) {
       return true;
     }
-    return item.cate.toLocaleLowerCase().includes(searchPro.toLocaleLowerCase());  
+    return item.name.toLocaleLowerCase().includes(searchPro.toLocaleLowerCase());  
   });
 
   const clearCart = () => {
@@ -66,7 +66,9 @@ const ShopProvider = ({ children }) => {
  }
   
 
-  const SubTotal = cart.reduce((total, item) => total + item.price, 0);
+  const SubTotal = useMemo(() => {
+    return cart.reduce((total, item) => total + item.price, 0);
+  },[cart])
 
   const shop = { all_product, addToCart, cart , SubTotal, removeItem, handleSearch, searchProduct, handleCheckout };
 

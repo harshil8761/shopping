@@ -9,7 +9,7 @@ import img6 from './images.jpg'
 export const all_product = [
     {
         id:1,
-        name:"Product 1",
+        name:"Men Printed Casual Shirt",
         image:img1,
         price: 599,
         oldP: 699,
@@ -17,7 +17,7 @@ export const all_product = [
     },
     {
         id:2,
-        name:"Product 2",
+        name:"Men Green Oversized T-Shirt",
         image:img2,
         price: 299,
         oldP: 399,
@@ -25,7 +25,7 @@ export const all_product = [
     },
     {
         id:3,
-        name:"Product 3",
+        name:"Women White Formal Top",
         image:img3,
         price: 499,
         oldP: 599,
@@ -33,7 +33,7 @@ export const all_product = [
     },
     {
         id:4,
-        name:"Product 4",
+        name:"Women Neon Green Graphic T-Shirt",
         image:img4,
         price: 599,
         oldP: 699,
@@ -41,7 +41,7 @@ export const all_product = [
     },
     {
         id:5,
-        name:"Product 5",
+        name:"Kids Captain America T-Shirt",
         image:img5,
         price: 399,
         oldP: 699,
@@ -49,7 +49,7 @@ export const all_product = [
     },
     {
         id:6,
-        name:"Product 6",
+        name:"Kids White Casual Shirt",
         image:img6,
         price: 199,
         oldP: 299,

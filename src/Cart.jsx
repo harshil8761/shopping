@@ -25,7 +25,7 @@ const Cart = () => {
             </div>
           );
         })) : (
-          <h1 style={{textAlign:"center",padding:"2rem 0"}} >Tamaru Cart khali che</h1>
+          <h1 style={{textAlign:"center",padding:"2rem 0"}} >Your Cart is Empty</h1>
         ) }
 
         <div className="cart-summary">
