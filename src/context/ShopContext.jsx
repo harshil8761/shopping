@@ -1,4 +1,4 @@
-import { createContext, useEffect, useMemo, useState } from "react";
+import { createContext, useCallback, useEffect, useMemo, useState } from "react";
 import { all_product } from "../assets/product.js";
 import toast from 'react-hot-toast'
 
@@ -15,7 +15,7 @@ const ShopProvider = ({ children }) => {
 
   const [searchPro,setSreachPro] = useState("");
 
-  const addToCart = (id) => {
+  const addToCart = useCallback((id) => {
     //check kare che product pehlethi to nathi ne
     const existing = cart.find((item) => item.id === id);
     if (existing) {
@@ -29,7 +29,7 @@ const ShopProvider = ({ children }) => {
     const updateCart = [...cart, matched];
     setCart(updateCart);
     toast.success(`Item added from cart! 🗑️ ${id}`);
-  };
+  },[cart])
 
 
 
@@ -37,27 +37,27 @@ const ShopProvider = ({ children }) => {
     localStorage.setItem("products", JSON.stringify(cart));
   }, [cart]);
 
-  const removeItem = (id) => {
+  const removeItem = useCallback((id) => {
     const remove = cart.filter(item => item.id !== id);
     localStorage.setItem("products", JSON.stringify(remove));
     setCart(remove);
     toast.error("Item removed from cart! 🗑️");
-  }
+  },[cart])
 
   const handleSearch = (e) => {
     setSreachPro(e.target.value);
   }
 
-  const searchProduct = all_product.filter(item => {
-    if (!searchPro) {
-      return true;
-    }
-    return item.name.toLocaleLowerCase().includes(searchPro.toLocaleLowerCase());  
-  });
+  const searchProduct = useMemo(() => {
+    return all_product.filter(item => {
+      if (!searchPro) return true;
+      return item.name.toLocaleLowerCase().includes(searchPro.toLocaleLowerCase()); 
+    })
+  },[searchPro]);
 
   const clearCart = () => {
     setCart([]); 
-    localStorage.clear("products");
+    localStorage.removeItem("products");
   }
 
  const handleCheckout = () => {
